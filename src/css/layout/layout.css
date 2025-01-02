@@ -1,0 +1,642 @@
+header{
+    position: fixed;
+    width:100%;
+    height:13vh;
+    background: linear-gradient(180deg, black, transparent 50%);
+    z-index:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+header .title{
+    display: none;
+}
+header .logo{
+    padding: 13px;
+    top: -30%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+header .i-menu{
+    left: 2%;
+}
+header .i-search{
+    right: 2%;
+}
+.menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 3;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--bg-color2);
+    box-shadow: 0px 5px 3px black;
+    overflow-y: scroll;
+    padding: 20px;
+    gap: 50px;
+    transition: .5s;
+}
+.menu::-webkit-scrollbar{
+    width: 5px;
+    height: 100%;
+}
+.menu::-webkit-scrollbar-thumb{
+    background: var(--bg-color1);
+    border-radius: 10px;
+}
+.menu.show{
+    left: 0;
+}
+.menu aside{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: -50%;
+    width: 6%;
+    height: 100%;
+    background-color: var(--bg-color2);
+    border-right: 2px solid var(--bg-color4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+.menu aside.show{
+    left: 0;
+}
+.menu aside img{
+    position: absolute;
+    top: 0;
+    transform: translate(-50%);
+    width: 130%;
+}
+.menu aside .close{
+    top: 18%;
+    font-size: 130%;
+}
+.menu nav{
+    margin-top: 15%;
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 50px;
+}
+.menu nav ul{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu nav ul li{
+    font-size: 1.3rem;
+    color: var(--font-color5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: .3s
+}
+.menu nav ul li:hover,
+.menu nav ul li a:hover{
+    gap: 20px;
+    color: var(--font-color1);
+}
+.menu nav ul li a{
+    color: var(--font-color5);  
+    position: relative;
+    font-weight: 400;
+    font-family: "Orbitron", serif;
+    transition: .3s;
+}
+.menu nav ul li .li-arrow{
+    font-size: .8rem;
+}
+.menu-sup{
+    border-top: 1px solid var(--bg-color6);
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    color: var(--font-color1);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 25px;
+}
+.menu-sup h1{
+    font-size: 1.5rem;
+}
+.menu-sup p{
+    font-size: 1.2rem;
+    font-weight: 200;
+    font-family: "Afacad Flux", sans-serif;
+    color: var(--font-color5);
+}
+.menu-sup p:hover{
+    color: var(--font-color1);
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+.image-menu{
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    right: 0%;
+    width: 60%;
+    height: 100vh;
+    background-image: url(/src/assets/img/atdm-carro-3.webp);
+    background-position: end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(50%);
+    
+}
+.image-menu.show{
+    z-index: 2;
+}
+main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.banner{
+    height: 95vh;
+}
+.filtered-banner{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+.filtered-banner::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.493);
+}
+.banner .banner-text{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: var(--font-color1);
+}
+.banner .banner-text .title{
+    font-size: 3.5rem;
+    top: 45%;
+}
+.banner .banner-text .subtitle{
+    font-size: 2rem;
+    top: 57%;
+}
+.banner .banner-text a{
+    color: var(--font-color1);
+    font-size: 5rem;
+    letter-spacing: -15px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 20%;
+    transform: rotate(90deg);
+    cursor: pointer;
+    animation: seta 2s ease-out infinite;
+}
+@keyframes seta {
+    50%{
+        bottom: 22%;
+    }
+    100%{
+        bottom: 20%;
+    }
+}
+.intro{
+    height: 85vh;
+}
+.info{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+}
+.info .info-text,
+.info .slider{
+    height: 80%;
+    position: relative;
+    left: 10%;
+}
+.info .info-text{
+    grid-column: 2;
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+.info .info-text p{
+    font-size: 1.5rem;
+    text-align: justify;
+    word-spacing: -2px;
+    font-family: "Afacad Flux", sans-serif;
+    overflow: hidden;
+}
+.info .slider{
+    grid-column: 1;
+    position: relative;
+    width: 70%;
+    height: 80%;
+    overflow: hidden;
+}
+.info .slider .slides{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: .5s ease-in-out;
+}
+.info .slider .slides .slide{
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.info .slider .slides .slide .slide-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    filter: brightness(90%);
+}
+.info .slider .slides .slide::after{
+    content: "";
+    background-position: center;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    transition: .5s;
+}
+.info .slider .slides .slide:hover::after{
+    background-color: rgba(0, 0, 0, 0.521);
+    background-image: url(/src/assets/img/Logo1.png);
+    background-size: 50%;
+}
+.arrow{
+    font-size: 1.5rem;
+    position: absolute;
+    cursor: pointer;
+}
+#prev{
+    left: 50%;
+}
+#next{
+    right: 5%;
+}
+.content .info{
+    width: 100%;
+}
+.content-text:nth-child(1){
+    grid-column: 1;
+}
+.content-text:nth-child(2){
+    grid-column: 2;
+}
+.content{
+    background-color: var(--bg-color4);
+}
+.content-text{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    gap: 15px;
+    overflow: hidden;
+    background-color: var(--bg-color4);
+    color: var(--font-color1);
+    box-shadow: 0px 0px 5px var(--bg-color2);
+}
+.content-text p{
+    font-size: 1.3rem;
+    text-align: justify;
+    font-family: "Afacad Flux", sans-serif;
+    letter-spacing: -1px;
+}
+.integrantes{
+    gap: 50px;
+}
+.integrantes article{
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.integrantes .person{
+    position: relative;
+    width: 20%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.integrantes .person:nth-child(4),
+.integrantes .person:nth-child(3){
+    bottom: -15%;
+}
+.integrantes .person h1{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.integrantes .person .redes{
+    width: 12%;
+    filter: brightness(0);
+}
+.integrantes .person .foto{
+    width: 100%;
+    filter: brightness(80%);
+    object-fit: cover;
+}
+footer{
+    scroll-snap-align: start;
+    position: relative;
+    display:flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+    background:var(--bg-color2);
+    color: var(--font-color1);
+}
+footer a{
+    color: var(--font-color1);
+    font-weight: 100
+}
+footer .title{
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+}
+footer .sumario{
+    border-bottom: 2px solid var(--bg-color3);
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap:wrap;
+    transition: .5s;
+}
+.sumario .column:nth-child(1){
+    grid-column: 1;
+}
+.sumario .column:nth-child(2){
+    grid-column: 2;
+}
+.sumario .column:nth-child(3){
+    grid-column: 3;
+}
+.sumario .column:nth-child(4){
+    grid-column: 4;
+}
+.sumario .column{
+    position: relative;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    overflow: hidden;
+    transition: .5s;
+}
+.sumario .column .header{
+    width: 100%;
+    height: 30px;
+    color: var(--font-color1);
+    font-size: .7rem;
+    font-weight: 100;
+    font-family: "Orbitron", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color2);
+    cursor: pointer;
+}
+.sumario .column ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.sumario .column ul li a{
+    color: var(--font-color1);
+    font-size: .8rem;
+    font-weight: 100;
+}
+/*FOOTER EMPRESA*/
+.devs{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+}
+.devs .copyright{
+    position: absolute;
+    right: 5%;
+    top: 20%;
+    width: auto;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 30px;
+}
+.devs h4,.devs .about{
+    position: absolute;
+    right: 5%;
+    font-size: 1rem;
+    font-weight: 100;
+}
+.devs .about{
+    bottom: 35%;
+}
+.social-emp{
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+@media screen and (width < 640px){
+    header{
+        height: 8vh;
+    }
+    header .logo{
+        padding: 15px;
+        top: -50%;
+        display: none;
+    }
+    header .title{
+        display: flex;
+        top: 30%;
+        transform: translate(-50%);
+        color: var(--bg-color1);
+    }
+    header .i-menu{
+        left: 5%;
+    }
+    header .i-search{
+        right: 5%;
+    }
+    .filtered-banner{
+        height: 40vh;
+        background-position: top;
+        background-size: 140%;
+    }
+    .filtered-banner::after{
+        background: rgba(0, 0, 0, 0.575);
+    }
+    .banner .banner-text .title{
+        font-size: 1.5rem;
+    }
+    .banner .banner-text .subtitle{
+        font-size: 1.3rem;
+    }
+    .banner .banner-text a{
+        font-size: 2rem;
+    }
+    .container{
+        width: 100%;
+    }
+    .container .intro{
+        height: 100dvh;
+    }
+    .container .info{
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100% 100%;
+    }
+    .container .info .slider{
+        grid-column: 1;
+        top: 20%;
+    }
+    .container .info .info-text{
+        top: -128%;
+        height: 100%;
+        grid-column: 1;
+        align-items: center;
+        gap: 10px;
+    }
+    .container .info .info-text,
+    .container .info .slider{
+        left: 5%;
+        width: 90%;
+        height: 50%;
+    }
+    .container .info .info-text p{
+        font-size: 1rem;
+    }
+    .arrow{
+        bottom: 1%;
+    }
+    #prev{
+        left: 40%;
+    }
+    #next{
+        right: 40%;
+    }
+    .menu{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .menu nav{
+        width: 80%;
+    }
+    .menu nav ul li{
+        justify-content: start;
+        width: 120%;
+        font-size: 1em;
+    }
+    .menu-sup{
+        width: 80%;
+    }
+    .menu aside{
+        width: 18%;
+    }
+    .menu aside .close{
+        top: 15%;
+    }
+    .menu-sup h1{
+        font-size: 120%;
+    }
+    .image-menu{
+        display: none;
+    }
+}

@@ -1,0 +1,58 @@
+/*FONTES IMPORTADAS*/
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Audiowide&family=Cinzel:wght@400..900&family=Orbitron:wght@400..900&display=swap');
+/*font-family: "Afacad Flux", sans-serif;*/
+/*font-family: "Cinzel", serif;*/
+/*font-family: "Anton SC", serif;*/
+/*font-family: "Orbitron", serif;*/
+/*font-family: "Audiowide", serif;*/
+
+
+/*VARIAVEIS DE CORES CSS GLOBAL*/
+:root{
+    --bg-color1:#fff;
+    --bg-color2:#000;
+    --bg-color3:#575757;
+    --bg-color4:#272727;
+    --bg-color5:#d6d6d6;
+    --bg-color6:#949494;
+    
+    --font-color1:#fff;
+    --font-color2:#000;
+    --font-color3:#575757;
+    --font-color4:#272727;
+    --font-color5:#d6d6d6;
+    --font-color6:#949494;
+}
+/*RESET BASICO CSS GLOBAL*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Audiowide", serif;
+    list-style: none;
+    user-select: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body.no-scroll{
+    overflow: hidden;
+}
+header.scroll-1{
+    background-color: var(--bg-color2);
+    background: black;
+}
+header.scroll-2{
+    background-color: var(--bg-color1);
+    background: white;
+}
+header.hidden{
+    transform: translateY(-110%);
+}
+header .title.scroll,
+.i-menu.scroll,
+.i-search.scroll{
+    color: var(--font-color2);
+}

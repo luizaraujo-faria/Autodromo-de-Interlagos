@@ -1,0 +1,90 @@
+.logo{
+    position: absolute;
+    width: 10%;
+    cursor: pointer;
+    transition: .5s;
+}
+.redes{
+    width: 10%;
+    cursor: pointer;
+    filter: contrast(50%);
+    transition: .5s
+}
+.redes:hover{
+    filter: contrast(100%);
+    scale: 1.1;
+}
+.icon{
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--font-color1);
+    cursor: pointer;
+}
+.title{
+    font-size: 2.2rem;
+    position: absolute;
+    font-family: "Orbitron", serif;
+}
+.subtitle{
+    font-size: 2rem;
+    position: absolute;
+    font-family: "Orbitron", serif;
+}
+.topico,
+.topico-black{
+    font-size: 2rem;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+    font-family: "Orbitron", serif;
+}
+.topico-black::after{
+    background-color: var(--font-color2);
+}
+.topico::after{
+    background-color: var(--font-color1);
+}
+.topico::after,
+.topico-black::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 0;
+    height: 2px;
+    transition: .3s;
+}
+.topico:hover::after,
+.topico-black:hover::after{
+    width: 100%;
+}
+.icon-redes{
+    width: 8%;
+    cursor: pointer;
+    transition: .5s;
+}
+.icon-redes:hover{
+    scale: 1.1;
+}
+@media screen and (width < 640px){
+    .logo{
+        width: 30%;
+    }
+    .title{
+        font-size: 1rem;
+    }
+    .subtitle{
+        font-size: .8rem;
+    }
+    .icon{
+        font-size: 130%;
+    }
+    .topico,
+    .topico-black{
+        font-size: 1rem;
+    }
+    .topico::after,
+    .topico-black::after{
+        height: 1px;
+    }
+}

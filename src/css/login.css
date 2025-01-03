@@ -24,7 +24,7 @@ main .back{
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,8 +42,9 @@ main .back{
     font-weight: 400;
     color: var(--font-color1);
 }
-.accout .logo{
-    top: 0%;
+.accout h5{
+    color: var(--font-color1);
+    top: 50%;
     z-index: 1;
 }
 .cad{
@@ -140,4 +141,74 @@ main .back{
     color: var(--font-color1);
     background: transparent;
     cursor: pointer;
+}
+@media screen and (width < 640px){
+    html{
+        height: 125vh;
+    }
+    main{
+        
+        background-size: cover;
+    }
+    main .back{
+        top: 8%;
+        left: 5%;
+        font-size: 2rem;
+        z-index: 1;
+    }
+    .accout{
+        width: 95%;
+        height:0%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 25% 25%;
+        flex-wrap: wrap;
+    }
+    .accout.expand-mobile{
+        height: 90%;
+    }
+    .accout h5{
+        top: 45%;
+    }
+    .cad{
+        grid-column: 1;
+        width: 100%;
+    }
+    .log{
+        grid-column: 1;
+        width: 100%;
+        top: -50%;
+    }
+    .cad article p,
+    .log article p{
+        display: none;
+    }
+    .cad .cad-button{
+        bottom: 25%;
+        width: 90%;
+    }
+    .cad .cad-button img{
+        width: 40px;
+        top: 10%;
+    }
+    .cad .cad-button p{
+        font-size: 80%;
+        position: absolute;
+        right: 15%;
+    }
+    .cad h3{
+        bottom: 60%;
+    }
+    .cad article,
+    .log article{
+        top: 5%;
+    }
+    .log .input{
+        width: 90%;
+        height: 8%;
+        bottom: 25%;
+    }
+    .log .btn{
+        height: 5%;
+        bottom: 55%;
+    }
 }

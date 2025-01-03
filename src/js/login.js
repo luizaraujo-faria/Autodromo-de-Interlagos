@@ -1,13 +1,20 @@
 //EFEITO DE CARREGAMENTO//
 window.onload = function () {
-    const accout = document.querySelector('.accout')
+    let accout = document.querySelector('.accout')
+    const mediaQuery = window.matchMedia("(width < 640px)");
 
     setTimeout(() =>{
-        accout.classList.add('expand')
+        if(mediaQuery.matches){
+            accout.classList.add('expand-mobile')
+        }
+        else{
+            accout.classList.add('expand')
+        }
         email.value = ""
         senha.value = ""
     },500)
 }
+
 //VERIFICAÇÃO DE LOGIN//
 function logar() {
     let email = document.querySelector('#email').value.toLowerCase()

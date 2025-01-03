@@ -161,7 +161,7 @@ header .i-search{
     right: 0%;
     width: 60%;
     height: 100vh;
-    background-image: url(/src/assets/img/atdm-carro-3.webp);
+    background-image: url(../../assets/img/atdm-carro-3.webp);
     background-position: end;
     background-repeat: no-repeat;
     background-size: cover;
